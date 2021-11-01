@@ -10,9 +10,9 @@ fn main() {
         .read_line(&mut conv)
         .expect("Failed to read line");
     
-    println!("You selected {}!", conv);
+    // println!("You selected {}!", conv);
 
-    let conv: char = conv.trim().parse().expect("Please insert 'c' of 'f'");
+    let conv: char = conv.trim().parse().expect("Please insert 'c' or 'f'");
 
     println!("Please enter a value");
     let mut temp = String::new();
@@ -23,12 +23,12 @@ fn main() {
     let temp: f32 = temp.trim().parse().expect("Please insert a number");
 
     if conv == 'c' {
-        println!("You entered {}C!", temp);
-        println!("Temperature {}F!", c_to_f(temp));
+        println!("Converting {}°C!", temp);
+        println!("The temperature in Fahrenheit is: {}°F!", c_to_f(temp));
     }
     else if conv == 'f' {
-        println!("You entered {}F!", temp);
-        println!("Temperature {}C!", f_to_c(temp));
+        println!("Converting {}°F!", temp);
+        println!("The temperature in Celsius is: {}°C!", f_to_c(temp));
     }
     else {
         println!("Please select 'c' or 'f'");
