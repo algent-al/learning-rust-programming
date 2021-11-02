@@ -20,8 +20,8 @@ fn main() {
     let mut f_2: i64;
 
     while i < n {
+        println!("i={}, F({})={}",i, i, f_n);
         if i == 0 {
-            println!("i={}, F({})={}",i, i, f_n);
             f_n += 1;
             i += 1;
         }
@@ -31,6 +31,5 @@ fn main() {
             f_n = f_2 + f_1;
             i += 1;
         }
-        println!("i={}, F({})={}",i, i, f_n);
     }
 }
