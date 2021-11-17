@@ -59,5 +59,5 @@ fn main() {
     // calling the associated "square" function
     let sq = Rectangle::square(42);
 
-    println!("hip_to_be_squaer = {:#?}", sq);
+    println!("sq = {:#?}", sq);
 }
