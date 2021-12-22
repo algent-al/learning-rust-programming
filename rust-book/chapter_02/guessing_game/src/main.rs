@@ -33,13 +33,12 @@ fn main() {
         println!("You guessed {}", guess);
 
         match guess.cmp(&secret_number) {
-            Ordering::Less => println!("{}","Too small!".red()),
-            Ordering::Greater => println!("{}","Too big!".red()),
+            Ordering::Less => println!("{}","Too small, try again!".red().italic()),
+            Ordering::Greater => println!("{}","Too big, try again!".red().italic()),
             Ordering::Equal => {
                 println!("{:30}","You win!".green().bold());
                 break;
             }
         }
-        println!("{}","Try again!".italic());
     }
 }
