@@ -1,17 +1,16 @@
+use colored::*;
 use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-    println!("Guess the numbers!");
+    println!("{}","Guessing Game!".on_blue().italic().bold());
+    println!("{}","Please input your guess".yellow());
 
     let secret_number = rand::thread_rng().gen_range(1..101);
 
     // println!("The secret number is: {}", secret_number);
     loop {
-
-        println!("Please input your guess");
-
         /* Get input in terminal from the user. 
         "mut" allow this file to be modified */
         let mut guess = String::new();
@@ -34,12 +33,13 @@ fn main() {
         println!("You guessed {}", guess);
 
         match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too small!"),
-            Ordering::Greater => println!("Too big!"),
+            Ordering::Less => println!("{}","Too small!".red()),
+            Ordering::Greater => println!("{}","Too big!".red()),
             Ordering::Equal => {
-                println!("You win!");
+                println!("{:30}","You win!".green().bold());
                 break;
             }
         }
+        println!("{}","Try again!".italic());
     }
 }
